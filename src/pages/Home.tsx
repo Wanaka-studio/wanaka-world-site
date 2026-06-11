@@ -94,7 +94,7 @@ const FAQ = [
   },
   {
     q: "Where can I play Wanaka games?",
-    a: "In any modern desktop browser at wanaka.fun, or on iPhone with the Wanaka App from the App Store.",
+    a: "In any modern desktop browser at studio.wanaka.fun, or on iPhone with the Wanaka App from the App Store.",
   },
   {
     q: "How do I share what I've made?",
@@ -181,7 +181,7 @@ export default function Home() {
         />
         <div className="card-grid card-grid--2">
           <article className="card card--product">
-            <span className="card__badge">Web · wanaka.fun</span>
+            <span className="card__badge">Web · studio.wanaka.fun</span>
             <h3 className="card__title card__title--lg">Wanaka Studio</h3>
             <p className="card__body">
               The creation platform. Chat with the agent to draft a world, then

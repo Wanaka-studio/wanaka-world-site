@@ -17,7 +17,7 @@ Wanaka World 官网重写版：信息丰富的公司主页，视觉语言与 Wan
 | `/terms-of-service` | 服务条款（文案与旧站一致） |
 | `*` | 404 |
 
-全部外链（wanaka.fun、App Store、Discord、Instagram、TikTok）集中在 `src/links.ts`。
+全部外链（studio.wanaka.fun、App Store、Discord、Instagram、TikTok）集中在 `src/links.ts`。
 
 ## 本地开发
 
