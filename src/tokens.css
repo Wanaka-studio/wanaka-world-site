@@ -1,0 +1,153 @@
+/**
+ * Wanaka UI Kit — Design Tokens
+ *
+ * source: Figma 5QP5Kda6PzOaY570fjxRLG  /  01 颜色字体 (1:2331)
+ * extract: 从 Figma 颜色 frame 图层名精确抽取（图层名即设计师语义命名）
+ * status: 定稿 · 两层结构 — 基础层 1:1 对齐 Figma 图层名，语义层按用途引用基础层
+ * 用法: 业务代码优先用语义层 (var(--color-bg-base) 等)；基础层仅在语义层无对应时直引
+ */
+
+:root {
+  /* ========================================================================
+   * 基础层 Primitives — 1:1 对齐 Figma 图层名 Color/<Group>/<Name>
+   * ====================================================================== */
+
+  /* Brand */
+  --color-brand-primary:     #C0F000;  /* Color/Brand/Primary */
+  --color-brand-secondary:   #67AC00;  /* Color/Brand/Secondary */
+  --color-brand-muted:       #A4CF1A;  /* Color/Brand/Muted */
+  --color-brand-dark:        #313D00;  /* Color/Brand/Dark */
+
+  /* Neutral */
+  --color-neutral-black:       #222222;  /* Color/Neutral/Black */
+  --color-neutral-blackwarm:   #140E10;  /* Color/Neutral/BlackWarm */
+  --color-neutral-dark:        #3A3536;  /* Color/Neutral/Dark */
+  --color-neutral-graydark:    #423F3F;  /* Color/Neutral/GrayDark */
+  --color-neutral-surfacedark: #272123;  /* Color/Neutral/SurfaceDark */
+  --color-neutral-white:       #FFFFFF;  /* Color/Neutral/White */
+  --color-neutral-light:       #E6E6E6;  /* Color/Neutral/Light */
+
+  /* Danger */
+  --color-danger-primary:    #FF4837;  /* Color/Danger/Primary */
+  --color-danger-dark:       #E03C2D;  /* Color/Danger/Dark */
+
+  /* Surface (Warm) */
+  --color-surface-warmlight: #F8EDEC;  /* Color/Surface/WarmLight */
+  --color-surface-warmmuted: #CFBBB9;  /* Color/Surface/WarmMuted */
+  --color-surface-warmdark:  #58413F;  /* Color/Surface/WarmDark */
+
+  /* ========================================================================
+   * 语义层 Semantic — 按用途引用基础层（业务代码用这层）
+   * ====================================================================== */
+
+  /* CTA / 主操作 */
+  --color-cta:            var(--color-brand-primary);    /* 主 CTA */
+  --color-cta-hover:      var(--color-brand-muted);      /* 主 CTA hover */
+  --color-cta-active:     var(--color-brand-secondary);  /* 主 CTA pressed */
+  --color-cta-deep:       var(--color-brand-dark);       /* 深色态强调 */
+
+  /* Surface / 深色背景体系（默认深色主题）*/
+  --color-bg-base:        var(--color-neutral-blackwarm);    /* 页面底色 */
+  --color-bg-elevated:    var(--color-neutral-black);        /* 卡片 / 弹层 */
+  --color-bg-card:        var(--color-neutral-surfacedark);  /* 次级卡片 */
+  --color-bg-overlay:     var(--color-neutral-dark);         /* hover / 悬浮态 */
+  --color-border:         var(--color-neutral-graydark);     /* 分割线 / 边框 */
+
+  /* Foreground */
+  --color-fg-primary:     var(--color-neutral-white);  /* 主文字 */
+  --color-fg-secondary:   var(--color-neutral-light);  /* 次文字 / disabled */
+  --color-fg-tertiary:    var(--color-neutral-gray);   /* 三级文字 / 占位 / 轴标签 */
+
+  /* Danger */
+  --color-danger:         var(--color-danger-primary);
+  --color-danger-hover:   var(--color-danger-dark);
+
+  /* Warm / 暖色装饰 */
+  --color-warm-bg:        var(--color-surface-warmlight);  /* 浅米白背景 */
+  --color-warm-muted:     var(--color-surface-warmmuted);  /* 灰粉 */
+  --color-warm-deep:      var(--color-surface-warmdark);   /* 深棕 */
+
+  /* ========================================================================
+   * Overlay / Alpha — 半透明叠加层（深色主题上的提亮/压暗/高光），按 alpha 档命名
+   * 组件衍生 token：Figma 大量用半透明叠加做 hover/选中/边框/光泽，归一为标尺
+   * ====================================================================== */
+  /* 白色叠加（在深色面上提亮：hover / 选中 / 边框 / 高光 / 渐变光泽）*/
+  --color-overlay-white-0:   rgba(255, 255, 255, 0);
+  --color-overlay-white-05:  rgba(255, 255, 255, 0.05);
+  --color-overlay-white-06:  rgba(255, 255, 255, 0.06);
+  --color-overlay-white-08:  rgba(255, 255, 255, 0.08);
+  --color-overlay-white-10:  rgba(255, 255, 255, 0.1);
+  --color-overlay-white-12:  rgba(255, 255, 255, 0.12);
+  --color-overlay-white-16:  rgba(255, 255, 255, 0.16);
+  --color-overlay-white-18:  rgba(255, 255, 255, 0.18);
+  --color-overlay-white-20:  rgba(255, 255, 255, 0.2);
+  --color-overlay-white-24:  rgba(255, 255, 255, 0.24);
+  --color-overlay-white-35:  rgba(255, 255, 255, 0.35);
+  --color-overlay-white-40:  rgba(255, 255, 255, 0.4);
+  --color-overlay-white-50:  rgba(255, 255, 255, 0.5);
+  --color-overlay-white-60:  rgba(255, 255, 255, 0.6);
+  /* 黑色叠加（投影 / 压暗）*/
+  --color-overlay-black-02:  rgba(0, 0, 0, 0.02);
+  --color-overlay-black-06:  rgba(0, 0, 0, 0.06);
+  --color-overlay-black-30:  rgba(0, 0, 0, 0.3);
+  --color-overlay-black-40:  rgba(0, 0, 0, 0.4);
+  --color-overlay-black-50:  rgba(0, 0, 0, 0.5);
+  --color-overlay-black-60:  rgba(0, 0, 0, 0.6);
+  /* 品牌绿叠加（选中态浅底）*/
+  --color-overlay-brand-10:  rgba(192, 240, 0, 0.1);
+  --color-overlay-brand-20:  rgba(192, 240, 0, 0.2);
+  /* 其他叠加 */
+  --color-overlay-bg-0:        rgba(20, 14, 16, 0);     /* 页面底色透出（渐变淡出）*/
+  --color-overlay-warmdark-80: rgba(88, 65, 63, 0.8);   /* 暖深棕 80% — tooltip 次文字 */
+
+  /* ========================================================================
+   * Accent / Extended Neutral — 功能强调色与扩展中性（组件衍生，非 Figma 主色板）
+   * ====================================================================== */
+  --color-accent-favorite:   #FFC300;   /* 收藏星标金 */
+  --color-accent-cursor:     #6283AB;   /* 重命名输入光标蓝 */
+  --color-accent-selection:  #ADD6FF;   /* 文本选区高亮蓝 */
+  --color-brand-bright:      #D3F958;   /* 亮黄绿 — 进度条填充高光 */
+  --color-neutral-offwhite:  #FCFCFC;   /* 开关旋钮近白 */
+  --color-neutral-hover:     #474747;   /* 列表抬高态深灰 */
+  --color-neutral-gray:      #9C9C9C;   /* 三级文字 / 占位灰（fg-tertiary 基色）*/
+  --color-neutral-track:     #392A2A;   /* 暖深轨道（进度条底槽）*/
+
+  /* ========================================================================
+   * Badge — 资产类型徽标语义色（bg / fg 成对；threeD 复用 brand）
+   * ====================================================================== */
+  --color-badge-audio-bg:    #59BEFF;   --color-badge-audio-fg:    #003E66;
+  --color-badge-2d-bg:       #F5EC00;   --color-badge-2d-fg:       #3D3500;
+  --color-badge-ui-bg:       #AE9AFF;   --color-badge-ui-fg:       #130062;
+  --color-badge-other-bg:    #79E895;   --color-badge-other-fg:    #224E2D;
+  --color-badge-prefab-bg:   #6542F6;   --color-badge-prefab-fg:   #F0ECFF;
+
+  /* ========================================================================
+   * Typography — Figma 01 颜色字体 / Font/Poppins/<weight>/<size>
+   * ====================================================================== */
+  --font-family-base:     "Poppins", "PingFang SC", "Microsoft YaHei", system-ui, sans-serif;
+  --font-family-pixel:    "Press Start 2P", "Courier New", monospace;  /* 品牌 logo 'W' 像素字（需消费方自行加载该字体）*/
+
+  /* 字号 (Figma 原值, px) */
+  --font-size-2xs:        8px;   /* 徽标极小字 */
+  --font-size-xs:         10px;
+  --font-size-sm:         12px;
+  --font-size-md:         14px;
+  --font-size-base:       15px;  /* 默认正文 */
+  --font-size-lg:         16px;
+  --font-size-lg2:        18px;  /* 快捷键符号 */
+  --font-size-xl:         20px;
+
+  /* 行高 (Figma 原值) */
+  --line-height-xs:       16px;  /* 10 */
+  --line-height-sm:       18px;  /* 12 */
+  --line-height-md:       21px;  /* 14 */
+  --line-height-base:     22px;  /* 15 */
+  --line-height-lg:       24px;  /* 16 */
+  --line-height-xl:       30px;  /* 20 */
+
+  /* 字重 */
+  --font-weight-light:    300;  /* Poppins Light — 侧栏导航标签等 */
+  --font-weight-regular:  400;
+  --font-weight-medium:   500;
+  --font-weight-semibold: 600;
+}

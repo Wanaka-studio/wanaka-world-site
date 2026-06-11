@@ -1,0 +1,59 @@
+/* Brand/IdentityAsset — Figma 1:244
+ * logoMark/logoLockup/backIcon 均基于 28px 方形容器；圆角 5.25px。 */
+.wui-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* logoMark / lockup 内的亮绿圆角方块 + 像素 W */
+.wui-brand__mark {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  flex: 0 0 auto;
+  border-radius: 5.25px;
+  background: var(--color-brand-primary);
+}
+.wui-brand__mark-letter {
+  /* Figma: "Press Start 2P" 像素字 Regular 14.55（消费方需加载该字体，未加载时回退 monospace）*/
+  font-family: var(--font-family-pixel);
+  font-weight: var(--font-weight-regular);
+  font-size: var(--font-size-md);
+  line-height: 1;
+  color: var(--color-neutral-black);
+  /* 像素字标在 Figma 中向上偏移，靠 transform 对齐到方块上半部 */
+  transform: translateY(-0.5px);
+}
+
+/* logoLockup 字标 WANAKA — 原始 SVG 宽 103.45 / 高 17.84 */
+.wui-brand__wordmark {
+  display: block;
+  width: 103.45px;
+  height: 17.84px;
+  flex: 0 0 auto;
+}
+.wui-brand__wordmark-text {
+  font-family: var(--font-family-base);
+  font-weight: var(--font-weight-semibold);
+  font-size: var(--font-size-base);
+  letter-spacing: 0.5px;
+  fill: var(--color-neutral-white);
+}
+
+/* backIcon — 透明 28px 容器内白色左箭头 */
+.wui-brand[data-asset="backIcon"] {
+  width: 28px;
+  height: 28px;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-neutral-white);
+}
+.wui-brand__arrow {
+  display: block;
+  width: 18.2px;
+  height: 14.16px;
+}

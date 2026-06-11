@@ -1,0 +1,64 @@
+/* Button/Medium — Figma 1:632  (圆角 12px · 高 36 · padding 8/16 · 底部硬阴影) */
+.wui-btn-md {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  height: 36px;
+  padding: 8px 16px;
+  border-radius: 12px;
+  border: 1px solid transparent;
+  font-family: var(--font-family-base);
+  font-weight: var(--font-weight-semibold);
+  font-size: var(--font-size-md);
+  line-height: 24px;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: filter 0.12s ease, transform 0.04s ease, box-shadow 0.04s ease;
+}
+.wui-btn-md__icon {
+  display: inline-flex;
+  width: 16px;
+  height: 16px;
+}
+.wui-btn-md[data-icon="only"] {
+  width: 36px;
+  padding: 8px;
+}
+
+/* style=primary — 白底深字 + 浅边 + 底部硬阴影 */
+.wui-btn-md[data-variant="primary"] {
+  background: var(--color-neutral-white);
+  border-color: var(--color-neutral-light);
+  color: var(--color-neutral-black);
+  box-shadow: 0 2.4px 0 0 var(--color-neutral-light);
+}
+/* style=secondary — 深灰 */
+.wui-btn-md[data-variant="secondary"] {
+  background: var(--color-neutral-dark);
+  border-color: var(--color-neutral-graydark);
+  color: var(--color-neutral-white);
+  box-shadow: 0 3px 0 0 var(--color-neutral-graydark);
+}
+/* style=ghost — 危险红（Figma 命名 ghost，视觉为 danger）*/
+.wui-btn-md[data-variant="ghost"] {
+  background: var(--color-danger-primary);
+  border-color: var(--color-danger-dark);
+  color: var(--color-neutral-white);
+  box-shadow: 0 3px 0 0 var(--color-danger-dark);
+}
+
+.wui-btn-md:hover:not(:disabled) {
+  filter: brightness(0.97);
+}
+/* state=active(pressed) — 下沉吃掉硬阴影 */
+.wui-btn-md:active:not(:disabled) {
+  transform: translateY(2px);
+  box-shadow: none;
+}
+/* state=disabled */
+.wui-btn-md:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+  box-shadow: none;
+}

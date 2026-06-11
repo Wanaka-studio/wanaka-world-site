@@ -1,0 +1,59 @@
+/* Button/Large — Figma 1:704  (圆角 16px · 高 48 · padding 16/24 · gap 8 · 底部硬阴影) */
+.wui-btn-lg {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 48px;
+  padding: 16px 24px;
+  border-radius: 16px;
+  border: 0.8px solid transparent;
+  font-family: var(--font-family-base);
+  font-weight: var(--font-weight-medium);
+  font-size: var(--font-size-lg);
+  line-height: var(--font-size-lg);
+  white-space: nowrap;
+  cursor: pointer;
+  transition: filter 0.12s ease, transform 0.04s ease, box-shadow 0.04s ease;
+}
+.wui-btn-lg__inner {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+.wui-btn-lg__icon {
+  display: inline-flex;
+  width: 16px;
+  height: 16px;
+}
+
+/* style=primary — 白底深字 + 浅边 + 底部硬阴影 */
+.wui-btn-lg[data-variant="primary"] {
+  background: var(--color-neutral-white);
+  border-color: var(--color-neutral-light);
+  color: var(--color-neutral-black);
+  box-shadow: 0 2.4px 0 0 var(--color-neutral-light);
+}
+/* style=secondary — 深灰 (Figma 1:713: stroke 1px · shadow y 2.4px) */
+.wui-btn-lg[data-variant="secondary"] {
+  background: var(--color-neutral-dark);
+  border-color: var(--color-neutral-graydark);
+  border-width: 1px;
+  color: var(--color-neutral-white);
+  box-shadow: 0 2.4px 0 0 var(--color-neutral-graydark);
+}
+
+.wui-btn-lg:hover:not(:disabled) {
+  filter: brightness(0.97);
+}
+/* state=active(pressed) — 下沉吃掉硬阴影 */
+.wui-btn-lg:active:not(:disabled) {
+  transform: translateY(2px);
+  box-shadow: none;
+}
+/* state=disabled */
+.wui-btn-lg:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+  box-shadow: none;
+}

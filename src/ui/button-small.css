@@ -1,0 +1,53 @@
+/* Button/Small — Figma 1:721  (圆角 6.4px · padding 8/12 · gap 4 · 半透明深底 + 背景模糊) */
+.wui-btn-sm {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 32px;
+  padding: 8px 12px;
+  border-radius: 6.4px;
+  border: none;
+  font-family: var(--font-family-base);
+  font-weight: var(--font-weight-medium);
+  font-size: var(--font-size-sm);
+  line-height: var(--font-size-sm);
+  white-space: nowrap;
+  cursor: pointer;
+  transition: filter 0.12s ease, transform 0.04s ease;
+}
+.wui-btn-sm__inner {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+}
+.wui-btn-sm__icon {
+  display: inline-flex;
+  width: 16px;
+  height: 16px;
+}
+/* icon=leading 时由内容撑高，icon=none 时固定 32 */
+.wui-btn-sm[data-icon="leading"] {
+  height: auto;
+}
+
+/* style=primary — 半透明深底 + 背景模糊 + 白字 */
+.wui-btn-sm[data-variant="primary"] {
+  background: var(--color-overlay-black-60);
+  -webkit-backdrop-filter: blur(4px);
+  backdrop-filter: blur(4px);
+  color: var(--color-neutral-white);
+}
+
+.wui-btn-sm:hover:not(:disabled) {
+  filter: brightness(1.1);
+}
+/* state=active(pressed) */
+.wui-btn-sm:active:not(:disabled) {
+  transform: translateY(1px);
+}
+/* state=disabled */
+.wui-btn-sm:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
